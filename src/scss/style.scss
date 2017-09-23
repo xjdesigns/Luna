@@ -1,0 +1,20 @@
+///////////////////////////
+// IMPORT STYLESHEETS //
+///////////////////////////
+
+// BASE
+@import "base/var"; // all global variables should live here
+@import "base/base"; // base styling goes here
+@import "base/images"; // base image
+@import "base/icons"; // base icons
+@import "base/typography"; // base typography
+@import "base/forms"; // base typography
+
+// MIXINS
+@import "mixin/elevation";
+@import "mixin/mixins";
+
+// APP CODE
+// THIS IS JUST THERE FOR PLACEHOLDER
+// WE WILL START FROM SCRATCH WHEN WE MEET UP
+@import "app/app-visual";

@@ -1,0 +1,15 @@
+<div class="flex">
+  <div
+    class="flex__i--xs-3"
+    *ngFor="let chart of charts"
+  >
+    <x-chartist
+      [data]="chart.data"
+      [type]="chart.type"
+      [options]="chart.options"
+      [responsiveOptions]="chart.responsiveOptions"
+      [events]="chart.events">
+    </x-chartist>
+  </div>
+
+</div>
