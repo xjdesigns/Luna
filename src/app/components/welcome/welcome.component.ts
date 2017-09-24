@@ -34,6 +34,29 @@ export class WelcomeComponent {
       {
         type: 'Line',
         data: data['Line2']
+        // events: {
+        //   draw(data: any): boolean {
+        //     data.element.animate({
+        //       opacity: {
+        //         begin: seq++ * 80,
+        //         // Duration of the animation
+        //         dur: 500,
+        //         // The value where the animation should start
+        //         from: 0,
+        //         // The value where it should end
+        //         to: 1
+        //       },
+        //       x1: {
+        //         begin: seq++ * 80,
+        //         dur: 500,
+        //         from: data.x - 100,
+        //         to: data.x,
+        //         // You can specify an easing function name or use easing functions from Chartist.Svg.Easing directly
+        //         easing: Chartist.Svg.Easing.easeOutQuart
+        //       }
+        //     })
+        //   }
+        // }
       },
       {
         type: 'Line',
@@ -112,6 +135,7 @@ export class WelcomeComponent {
         // }
       }
     ];
+    console.warn('this charts', this.charts);
   }
 }
 

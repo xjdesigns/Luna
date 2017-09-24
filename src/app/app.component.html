@@ -1,62 +1,41 @@
 <div class="app">
-
-  <header class="app-header">
-
-    <div class="app-header__logo">
-      LUNA
+  <header class="app__header">
+    <div class="spx-media spx-media--middle">
+      <div class="spx-media__element">
+        <div
+          class="tgt-logo"
+          (mouseup)="toggleMenu()"
+          [class.is-open]="appMenuOpen"
+        ></div>
+      </div>
+      <div class="spx-media__body small-font-size">
+        <p>LUNA</p>
+        <p>Store: Coon Rapids, MN T2145</p>
+        <p>Store Hours: 9am - 10pm</p>
+      </div>
     </div>
-    <div class="app-header__links">
-      <span [routerLink]="['/welcome']">v1:ALPHA</span>
-    </div>
-
   </header>
-
-  <div class="spx-click-shield" [class.is-open]="appMenuOpen" (click)="toggleMenu()"></div>
-  <div class="app-sidebar" [class.is-open]="appMenuOpen">
-    <div (click)="toggleMenu()" class="app-sidebar__open" [class.is-open]="appMenuOpen">
-      <i class="material-icons">add</i>
-    </div>
-    <nav class="app-sidebar__nav">
-      <ul class="app-nav">
-        <li class="app-nav__nav">Navigation</li>
-        <li [routerLink]="['/welcome']" [routerLinkActive]="['is-active']">Home</li>
-        <li [routerLink]="['/variable']" [routerLinkActive]="['is-active']">Vars / Base</li>
-        <li [routerLink]="['/grid']" [routerLinkActive]="['is-active']">Grid</li>
-        <li
-          *ngFor="let nav of routes"
-          (click)="toggleNav(nav.name)"
-          class="has-menu"
-          [class.is-active]="activeNav === nav.name"
-        >
-          {{nav.name}}
-          <div
-            class="app-nav-inner"
-            *ngIf="nav.routes && nav.routes.length > 0"
-          >
-            <ul>
-              <li
-                *ngFor="let sub of nav.routes"
-                [routerLink]="sub.path"
-                [routerLinkActive]="['is-active']"
-              >
-                {{sub.name}}
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li [routerLink]="['/helpers']" [routerLinkActive]="['is-active']">Helpers</li>
-        <li [routerLink]="['/ng2']" [routerLinkActive]="['is-active']">NG2</li>
-      </ul>
-    </nav>
+  <div class="app__base">
+    <router-outlet></router-outlet>
   </div>
 
-  <router-outlet></router-outlet>
-
-  <footer class="app-footer">
-    <p>LUNA 2017</p>
-    <p>Created by Nick Dobie, Emi Lyman, and Jason Jacobson</p>
-  </footer>
-
+  <!-- // MENU -->
+  <!-- <div class="app-menu" [class.is-open]="appMenuOpen">
+    <div class="app-menu__item app-menu__item--user">
+      <div class="spx-media">
+        <div class="spx-media__element">
+          <i class="material-icons">check</i>
+        </div>
+        <div class="spx-media__body">
+          <p>Jason</p>
+          <p>2017/0/7</p>
+        </div>
+      </div>
+    </div>
+    <div class="app-menu__item">
+      <i class="material-icons">check</i>
+    </div>
+  </div> -->
 </div>
 
 <!-- alert tag for service -->

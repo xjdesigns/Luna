@@ -1,7 +1,14 @@
-<div class="flex">
+<div class="app-view">
+  <div class="app-data-display">
+    <h2><sup>$</sup>1,900,000</h2>
+    <p>Weekly Sales</p>
+    <div class="app-divider"></div>
+    <h2>1,230</h2>
+    <p>Daily Units Sold</p>
+  </div>
   <div
-    class="flex__i--xs-3"
-    *ngFor="let chart of charts"
+    *ngFor="let chart of charts; let i = index"
+    [class.focused-data]="i === 2"
   >
     <x-chartist
       [data]="chart.data"
@@ -10,6 +17,13 @@
       [responsiveOptions]="chart.responsiveOptions"
       [events]="chart.events">
     </x-chartist>
+    <div class="app-data-display" *ngIf="i === 2">
+      <h2><sup>$</sup>1,900,000</h2>
+      <p>Weekly Sales</p>
+      <div class="app-divider"></div>
+      <h2>1,230</h2>
+      <p>Daily Units Sold</p>
+    </div>
   </div>
 
 </div>

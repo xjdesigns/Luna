@@ -1,215 +1,158 @@
-$header: 72px;
-
-.app {
-  width: 100%;
-  background: white;
+body {
+  background: $grey-d1;
+  color: white;
 }
 
-.app-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+.tgt-logo {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 50%;
+  margin: 12px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border-radius: 50%;
+    border: 6px solid red;
+    transform: scale(1);
+    transition: transform .5s ease-in-out;
+  }
 
+  &::after {
+    content: 'close';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family: $liga-font-family;
+    font-size: 3rem;
+    color: red;
+    transform-origin: 0 0;
+    transform: scale(0) translate(-50%, -50%);
+    transition: transform .5s ease-in-out;
+  }
+
+  &.is-open {
+    &::before {
+      transform: scale(0, 0);
+    }
+    &::after {
+      transform: scale(1, 1) translate(-50%, -50%);
+    }
+  }
+}
+
+.small-font-size {
+  & > p {
+    font-size: 12px;
+  }
+}
+
+.app {
+  position: relative;
   width: 100%;
-  height: $header;
-  padding: 12px 24px;
-  background: white;
-  box-shadow: 0px 2px 3px rgba(0,0,0,0.4);
-  transition: padding .3s ease, height .5s ease;
+  height: 100%;
 
-  &.top-offset {
-    padding: 6px 24px;
-    height: 24px;
-  }
-
-  &__logo {
-    flex: 1;
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: black;
-  }
-
-  &__links {
-    color: black;
+  &__header {
+    padding: 12px;
+    @include elevation-2;
   }
 }
 
 .app-view {
-  max-width: 70vw;
-  min-height: calc(100vh - 160px - #{$header} - 24px - #{$header} - 48px);
-  margin: calc(24px + #{$header}) auto 48px;
-  padding-bottom: 48px;
-}
+  display: grid;
+  // grid-gap: 24px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
 
-.app-sidebar {
-  position: fixed;
-  top: $header;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-
-  width: 240px;
-  background: rgba(0,0,0,0.8);
-  transform: translateX(-100%);
-  transition: transform .3s ease;
-
-  &.is-open {
-    transform: translateX(0%);
+  & > div {
+    margin: 12px;
+    padding: 12px;
+    border: 1px solid white;
+    @include elevation-2;
   }
 
-  // OPEN
-  &__open {
-    background: red;
-    color: white;
-    max-width: 36px;
-    max-height: 36px;
-    padding: 6px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 1px rgba(0,0,0,0.5);
-    cursor: pointer;
-
-    position: absolute;
-    top: 12px;
-    right: -48px;
-    z-index: 2;
-
-    transform: rotate(0deg);
-    transition: right .3s ease, box-shadow .3s ease, transform .3s ease;
-
-    &:hover {
-      box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
-    }
-
-    &.is-open {
-      right: -18px;
-      transform: rotate(45deg);
-    }
-  }
-
-  // NAV
-  &__nav {
-    color: white;
-
-    li {
-      position: relative;
-      cursor: pointer;
-      padding: 9px 12px;
-      z-index: 1;
-      outline: 0;
-
-      &:not(.app-nav__nav) {
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          z-index: -1;
-          width: 0%;
-          background: $white;
-          opacity: .3;
-          transition: width .5s ease, background .5s ease;
-        }
-
-        &:focus,
-        &:active,
-        &:hover,
-        &.is-active {
-          &::after {
-            width: 100%;
-          }
-        }
-        &.is-active {
-          &::after {
-            background: $primary;
-          }
-        }
-      }
-
-      &.app-nav__nav {
-        font-size: 10px;
-        margin-top: 12px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid #e5e5e5;
-      }
-    }
-  }
-}
-.app-nav-inner {
-  display: none;
-  margin-top: 12px;
-
-  li {
-    left: -12px;
-    padding-left: 24px;
+  .focused-data {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    align-self: stretch;
+    justify-self: stretch;
   }
 }
 
-.app-nav {
-  & > li {
-    position: relative;
-
-    &.has-menu {
-      &::before {
-        content: 'keyboard_arrow_down';
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        z-index: 1;
-        color: white;
-        font-family: $liga-font-family;
-        transform: rotate(0deg);
-        transition: transform .3s ease-in-out;
-      }
-    }
-
-    &.is-active {
-      &.has-menu {
-        &::before {
-          transform: rotate(180deg);
-        }
-      }
-
-      .app-nav-inner {
-        display: block;
-      }
-    }
+.app-data-display {
+  h2 {
+    font-weight: 100;
   }
-}
-
-.app-menu-nav {
-  display: flex;
-  margin: auto;
-  width: 70vw;
-
-  > div {
-    flex: 1;
-  }
-}
-
-.app-menu-title {
-  margin: 24px 0 56px;
-  border-bottom: 1px solid gray;
-}
-
-// FOOTER
-.app-footer {
-  padding: 48px;
-  background: rgba(0,0,0,1);
-  color: white;
-  text-align: center;
-
   p {
     font-size: .75rem;
   }
+  sup {
+    font-size: 1ex;
+    vertical-align: text-top;
+  }
+}
 
-  .material-icons {
-    vertical-align: middle;
+.app-divider {
+  height: 1px;
+  margin: 12px 0;
+  background: $grey-l1;
+}
+
+// CHART TRUMP CODE
+.app-view {
+  .ct-label {
+    color: white;
+    fill: white;
+  }
+  .ct-grid {
+    stroke: rgba(255,255,255,.2);
+  }
+}
+
+
+.app-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  z-index: 1;
+  background: white;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  transform: translate(-100%, -100%);
+  transition: transform .5s ease;
+  @include elevation-4;
+
+  &.is-open {
+    transform: translate(0%, 0%);
+  }
+
+  &__item {
+    align-self: center;
+    padding: 24px;
+    text-align: center;
+
+    &--user {
+      grid-column: 1 / 3;
+    }
+
+    &:hover {
+      background: red;
+    }
   }
 }
