@@ -21,7 +21,7 @@ var code_display_directive_1 = require("./shared/code-display.directive");
 // import {
 //   SixPixelsProvider
 // } from './components'
-// import { Ng2Component, Ng2Provider } from './NG2';
+var NG2_1 = require("./NG2");
 // ALERTS
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
@@ -44,9 +44,7 @@ AppModule = __decorate([
             welcome_component_1.WelcomeComponent,
             code_display_directive_1.CodeDisplayDirective,
             alert_1.AlertComponent
-            // ...SixPixelsProvider
-            // ...Ng2Provider
-        ],
+        ].concat(NG2_1.Ng2Provider),
         providers: [
             alert_service_1.AlertService
         ],

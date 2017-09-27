@@ -94,12 +94,27 @@ body {
   h2 {
     font-weight: 100;
   }
-  p {
+  p,
+  span {
     font-size: .75rem;
   }
   sup {
     font-size: 1ex;
     vertical-align: text-top;
+  }
+}
+
+.app-countdown {
+  display: flex;
+  min-width: 300px;
+
+  & > div {
+    flex: 0 0 25%;
+    text-align: center;
+
+    & > p:nth-child(2) {
+      font-size: 10px;
+    }
   }
 }
 

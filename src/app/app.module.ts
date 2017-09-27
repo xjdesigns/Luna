@@ -20,7 +20,7 @@ import { CodeDisplayDirective } from './shared/code-display.directive';
 // import {
 //   SixPixelsProvider
 // } from './components'
-// import { Ng2Component, Ng2Provider } from './NG2';
+import { Ng2Component, Ng2Provider } from './NG2';
 
 // ALERTS
 import { AlertComponent } from './services/alert/alert';
@@ -39,9 +39,9 @@ import { AlertService } from './services/alert-service';
     AppComponent,
     WelcomeComponent,
     CodeDisplayDirective,
-    AlertComponent
+    AlertComponent,
     // ...SixPixelsProvider
-    // ...Ng2Provider
+    ...Ng2Provider
   ],
   providers: [
     AlertService
