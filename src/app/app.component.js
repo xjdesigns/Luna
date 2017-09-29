@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var alert_service_1 = require("./services/alert-service");
 var AppComponent = (function () {
-    function AppComponent(router) {
+    function AppComponent(router, as) {
         var _this = this;
         this.router = router;
+        this.as = as;
         this.appMenuOpen = false;
         var b = document.querySelector('body');
         this.router.events.subscribe(function (e) {
@@ -26,6 +28,9 @@ var AppComponent = (function () {
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;
     };
+    AppComponent.prototype.createAlert = function () {
+        this.as.addAlert('Toast Message', 'success');
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -33,6 +38,6 @@ AppComponent = __decorate([
         selector: 'my-app',
         templateUrl: 'app/app.component.html'
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [router_1.Router, alert_service_1.AlertService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
