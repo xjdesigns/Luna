@@ -68,47 +68,47 @@ var ChartistComponent = (function () {
             chart.on(event_1, this.events[event_1]);
         }
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ChartistComponent.prototype, "data", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ChartistComponent.prototype, "type", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ChartistComponent.prototype, "options", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ChartistComponent.prototype, "responsiveOptions", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], ChartistComponent.prototype, "events", void 0);
+    ChartistComponent = __decorate([
+        core_1.Component({
+            selector: 'x-chartist',
+            template: '<ng-content></ng-content>'
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef])
+    ], ChartistComponent);
     return ChartistComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], ChartistComponent.prototype, "data", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], ChartistComponent.prototype, "type", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], ChartistComponent.prototype, "options", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], ChartistComponent.prototype, "responsiveOptions", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], ChartistComponent.prototype, "events", void 0);
-ChartistComponent = __decorate([
-    core_1.Component({
-        selector: 'x-chartist',
-        template: '<ng-content></ng-content>'
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], ChartistComponent);
 exports.ChartistComponent = ChartistComponent;
 var ChartistModule = (function () {
     function ChartistModule() {
     }
+    ChartistModule = __decorate([
+        core_1.NgModule({
+            declarations: [ChartistComponent],
+            exports: [ChartistComponent]
+        })
+    ], ChartistModule);
     return ChartistModule;
 }());
-ChartistModule = __decorate([
-    core_1.NgModule({
-        declarations: [ChartistComponent],
-        exports: [ChartistComponent]
-    })
-], ChartistModule);
 exports.ChartistModule = ChartistModule;
 // for angular-cli
 exports.default = {

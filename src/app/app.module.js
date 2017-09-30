@@ -24,31 +24,35 @@ var NG2_1 = require("./NG2");
 // ALERTS
 var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
+// REDUX
+var store_1 = require("@ngrx/store");
+var counter_1 = require("./counter");
 var AppModule = (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                app_routing_module_1.AppRoutingModule,
+                chartist_component_1.ChartistModule,
+                store_1.StoreModule.forRoot({ counter: counter_1.counterReducer })
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                welcome_component_1.WelcomeComponent,
+                code_display_directive_1.CodeDisplayDirective,
+                alert_1.AlertComponent,
+                docs_component_1.DocsComponent
+            ].concat(components_1.LunaProvider, NG2_1.Ng2Provider),
+            providers: [
+                alert_service_1.AlertService
+            ],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-            forms_1.FormsModule,
-            http_1.HttpModule,
-            app_routing_module_1.AppRoutingModule,
-            chartist_component_1.ChartistModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            welcome_component_1.WelcomeComponent,
-            code_display_directive_1.CodeDisplayDirective,
-            alert_1.AlertComponent,
-            docs_component_1.DocsComponent
-        ].concat(components_1.LunaProvider, NG2_1.Ng2Provider),
-        providers: [
-            alert_service_1.AlertService
-        ],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;

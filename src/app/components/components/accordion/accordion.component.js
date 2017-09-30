@@ -18,16 +18,16 @@ var AccordionComponent = (function () {
     AccordionComponent.prototype.toggleAccordion = function () {
         this.accordionOpen = !this.accordionOpen;
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], AccordionComponent.prototype, "title", void 0);
+    AccordionComponent = __decorate([
+        core_1.Component({
+            selector: 'app-accordion',
+            templateUrl: 'app/components/components/accordion/accordion.component.html'
+        })
+    ], AccordionComponent);
     return AccordionComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], AccordionComponent.prototype, "title", void 0);
-AccordionComponent = __decorate([
-    core_1.Component({
-        selector: 'app-accordion',
-        templateUrl: 'app/components/components/accordion/accordion.component.html'
-    })
-], AccordionComponent);
 exports.AccordionComponent = AccordionComponent;

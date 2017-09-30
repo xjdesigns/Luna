@@ -26,13 +26,13 @@ var AlertComponent = (function () {
     AlertComponent.prototype.removeAlert = function (i) {
         this.alertService.removeAlertByIndex(i);
     };
+    AlertComponent = __decorate([
+        core_1.Component({
+            selector: 'alert',
+            templateUrl: 'app/services/alert/alert.html'
+        }),
+        __metadata("design:paramtypes", [alert_service_1.AlertService])
+    ], AlertComponent);
     return AlertComponent;
 }());
-AlertComponent = __decorate([
-    core_1.Component({
-        selector: 'alert',
-        templateUrl: 'app/services/alert/alert.html'
-    }),
-    __metadata("design:paramtypes", [alert_service_1.AlertService])
-], AlertComponent);
 exports.AlertComponent = AlertComponent;

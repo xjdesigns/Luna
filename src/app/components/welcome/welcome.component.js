@@ -127,15 +127,15 @@ var WelcomeComponent = (function () {
         ];
         console.warn('this charts', this.charts);
     }
+    WelcomeComponent = __decorate([
+        core_1.Component({
+            selector: 'app-welcome',
+            templateUrl: 'app/components/welcome/welcome.component.html'
+        }),
+        __metadata("design:paramtypes", [])
+    ], WelcomeComponent);
     return WelcomeComponent;
 }());
-WelcomeComponent = __decorate([
-    core_1.Component({
-        selector: 'app-welcome',
-        templateUrl: 'app/components/welcome/welcome.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
 // const data: any = require('./data.json');
 var data = {

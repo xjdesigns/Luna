@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app/docs/docs.component.html'
 })
 export class DocsComponent {
+  chart: any;
   constructor() {
     this.chart = {
       type: 'Bar',

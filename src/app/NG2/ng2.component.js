@@ -10,12 +10,12 @@ var core_1 = require("@angular/core");
 var Ng2Component = (function () {
     function Ng2Component() {
     }
+    Ng2Component = __decorate([
+        core_1.Component({
+            selector: 'app-ng2',
+            templateUrl: 'app/NG2/ng2.component.html'
+        })
+    ], Ng2Component);
     return Ng2Component;
 }());
-Ng2Component = __decorate([
-    core_1.Component({
-        selector: 'app-ng2',
-        templateUrl: 'app/NG2/ng2.component.html'
-    })
-], Ng2Component);
 exports.Ng2Component = Ng2Component;

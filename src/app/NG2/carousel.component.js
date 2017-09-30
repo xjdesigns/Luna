@@ -68,24 +68,24 @@ var CarouselComponent = (function () {
         this.prevIsDisabled = (this.length - this.slide) === this.length ? true : false;
         this.nextIsDisabled = (this.length - this.slide) === 3 ? true : false;
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], CarouselComponent.prototype, "images", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], CarouselComponent.prototype, "primary", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], CarouselComponent.prototype, "alternate", void 0);
+    CarouselComponent = __decorate([
+        core_1.Component({
+            selector: 'app-carousel',
+            templateUrl: 'app/NG2/carousel.component.html'
+        })
+    ], CarouselComponent);
     return CarouselComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], CarouselComponent.prototype, "images", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], CarouselComponent.prototype, "primary", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], CarouselComponent.prototype, "alternate", void 0);
-CarouselComponent = __decorate([
-    core_1.Component({
-        selector: 'app-carousel',
-        templateUrl: 'app/NG2/carousel.component.html'
-    })
-], CarouselComponent);
 exports.CarouselComponent = CarouselComponent;

@@ -65,12 +65,12 @@ var SelectlistDisplayComponent = (function () {
     SelectlistDisplayComponent.prototype.selectList = function (val) {
         console.log('This is the event from the select list.', val);
     };
+    SelectlistDisplayComponent = __decorate([
+        core_1.Component({
+            selector: 'app-selectlist-display',
+            templateUrl: 'app/NG2/selectListDisplay.component.html'
+        })
+    ], SelectlistDisplayComponent);
     return SelectlistDisplayComponent;
 }());
-SelectlistDisplayComponent = __decorate([
-    core_1.Component({
-        selector: 'app-selectlist-display',
-        templateUrl: 'app/NG2/selectListDisplay.component.html'
-    })
-], SelectlistDisplayComponent);
 exports.SelectlistDisplayComponent = SelectlistDisplayComponent;

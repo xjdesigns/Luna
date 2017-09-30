@@ -139,44 +139,44 @@ var SelectlistComponent = (function () {
             return v.indexOf(val.toLowerCase()) !== -1;
         });
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], SelectlistComponent.prototype, "data", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], SelectlistComponent.prototype, "multiple", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], SelectlistComponent.prototype, "search", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SelectlistComponent.prototype, "outputType", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SelectlistComponent.prototype, "valueProp", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], SelectlistComponent.prototype, "nameProp", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], SelectlistComponent.prototype, "currentSelection", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], SelectlistComponent.prototype, "onChange", void 0);
+    SelectlistComponent = __decorate([
+        core_1.Component({
+            selector: 'app-selectlist',
+            templateUrl: 'app/NG2/selectlist.component.html'
+        })
+    ], SelectlistComponent);
     return SelectlistComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], SelectlistComponent.prototype, "data", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], SelectlistComponent.prototype, "multiple", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], SelectlistComponent.prototype, "search", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectlistComponent.prototype, "outputType", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectlistComponent.prototype, "valueProp", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], SelectlistComponent.prototype, "nameProp", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], SelectlistComponent.prototype, "currentSelection", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], SelectlistComponent.prototype, "onChange", void 0);
-SelectlistComponent = __decorate([
-    core_1.Component({
-        selector: 'app-selectlist',
-        templateUrl: 'app/NG2/selectlist.component.html'
-    })
-], SelectlistComponent);
 exports.SelectlistComponent = SelectlistComponent;

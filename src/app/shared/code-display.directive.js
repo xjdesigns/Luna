@@ -24,10 +24,10 @@ var CodeDisplayDirective = (function () {
             PR.prettyPrint();
         }, 100);
     };
+    CodeDisplayDirective = __decorate([
+        core_1.Directive({ selector: '[code-display]' }),
+        __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+    ], CodeDisplayDirective);
     return CodeDisplayDirective;
 }());
-CodeDisplayDirective = __decorate([
-    core_1.Directive({ selector: '[code-display]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
-], CodeDisplayDirective);
 exports.CodeDisplayDirective = CodeDisplayDirective;

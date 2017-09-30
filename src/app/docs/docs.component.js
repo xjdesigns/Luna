@@ -17,15 +17,15 @@ var DocsComponent = (function () {
             data: data['Bar']
         };
     }
+    DocsComponent = __decorate([
+        core_1.Component({
+            selector: 'app-docs',
+            templateUrl: 'app/docs/docs.component.html'
+        }),
+        __metadata("design:paramtypes", [])
+    ], DocsComponent);
     return DocsComponent;
 }());
-DocsComponent = __decorate([
-    core_1.Component({
-        selector: 'app-docs',
-        templateUrl: 'app/docs/docs.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], DocsComponent);
 exports.DocsComponent = DocsComponent;
 var data = {
     "Bar": {

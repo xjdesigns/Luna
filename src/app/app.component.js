@@ -12,11 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var alert_service_1 = require("./services/alert-service");
+var store_1 = require("@ngrx/store");
+var counter_1 = require("./counter");
 var AppComponent = (function () {
-    function AppComponent(router, as) {
+    function AppComponent(router, as, store) {
         var _this = this;
         this.router = router;
         this.as = as;
+        this.store = store;
         this.appMenuOpen = false;
         var b = document.querySelector('body');
         this.router.events.subscribe(function (e) {
@@ -24,20 +27,33 @@ var AppComponent = (function () {
                 _this.appMenuOpen = false;
             }
         });
+        this.counter = store.select('counter');
+        this.counter.subscribe(function (v) {
+            console.warn(v);
+            _this.jason = v;
+            console.warn('jason', _this.jason);
+        });
+        console.warn(this.counter);
     }
+    AppComponent.prototype.increment = function () {
+        this.store.dispatch({ type: counter_1.INCREMENT });
+    };
+    AppComponent.prototype.decrement = function () {
+        this.store.dispatch({ type: counter_1.DECREMENT });
+    };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;
     };
     AppComponent.prototype.createAlert = function () {
         this.as.addAlert('Toast Message', 'success');
     };
+    AppComponent = __decorate([
+        core_1.Component({
+            selector: 'my-app',
+            templateUrl: 'app/app.component.html'
+        }),
+        __metadata("design:paramtypes", [router_1.Router, alert_service_1.AlertService, store_1.Store])
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'my-app',
-        templateUrl: 'app/app.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.Router, alert_service_1.AlertService])
-], AppComponent);
 exports.AppComponent = AppComponent;

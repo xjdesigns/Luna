@@ -35,12 +35,12 @@ var CarouselDisplayComponent = (function () {
                 desc: 'Optional value for your Alternate Images.'
             }];
     }
+    CarouselDisplayComponent = __decorate([
+        core_1.Component({
+            selector: 'app-carousel-display',
+            templateUrl: 'app/NG2/carousel-display.component.html'
+        })
+    ], CarouselDisplayComponent);
     return CarouselDisplayComponent;
 }());
-CarouselDisplayComponent = __decorate([
-    core_1.Component({
-        selector: 'app-carousel-display',
-        templateUrl: 'app/NG2/carousel-display.component.html'
-    })
-], CarouselDisplayComponent);
 exports.CarouselDisplayComponent = CarouselDisplayComponent;

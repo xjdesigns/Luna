@@ -27,6 +27,10 @@ import { Ng2Component, Ng2Provider } from './NG2';
 import { AlertComponent } from './services/alert/alert';
 import { AlertService } from './services/alert-service';
 
+// REDUX
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter';
+
 
 @NgModule({
   imports:      [
@@ -34,7 +38,8 @@ import { AlertService } from './services/alert-service';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    ChartistModule
+    ChartistModule,
+    StoreModule.forRoot({ counter: counterReducer })
   ],
   declarations: [
     AppComponent,

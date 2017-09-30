@@ -61,10 +61,10 @@ var AlertService = (function () {
     AlertService.prototype.serviceNext = function (alerts) {
         this.subject.next(alerts);
     };
+    AlertService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [router_1.Router])
+    ], AlertService);
     return AlertService;
 }());
-AlertService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [router_1.Router])
-], AlertService);
 exports.AlertService = AlertService;

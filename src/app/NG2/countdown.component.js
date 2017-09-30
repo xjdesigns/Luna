@@ -33,18 +33,18 @@ var CountdownComponent = (function () {
             }
         }, 1000);
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], CountdownComponent.prototype, "date", void 0);
+    CountdownComponent = __decorate([
+        core_1.Component({
+            selector: 'app-countdown',
+            templateUrl: 'app/NG2/countdown.component.html'
+        })
+    ], CountdownComponent);
     return CountdownComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], CountdownComponent.prototype, "date", void 0);
-CountdownComponent = __decorate([
-    core_1.Component({
-        selector: 'app-countdown',
-        templateUrl: 'app/NG2/countdown.component.html'
-    })
-], CountdownComponent);
 exports.CountdownComponent = CountdownComponent;
 function calcRemainingTime(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date().toString());

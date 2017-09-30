@@ -18,6 +18,8 @@
     </div>
   </header>
   <div class="app__base">
+    <div>Current Count: {{ jason.number }}</div>
+    <button class="sox-btn spx-btn--primary" (click)="increment()">Increment</button>
     <router-outlet></router-outlet>
   </div>
 

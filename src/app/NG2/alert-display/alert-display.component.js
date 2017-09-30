@@ -25,13 +25,13 @@ var AlertDisplayComponent = (function () {
     AlertDisplayComponent.prototype.clearAll = function () {
         this.alertService.clearSubject();
     };
+    AlertDisplayComponent = __decorate([
+        core_1.Component({
+            selector: 'app-alert-display',
+            templateUrl: 'app/NG2/alert-display/alert-display.component.html'
+        }),
+        __metadata("design:paramtypes", [alert_service_1.AlertService])
+    ], AlertDisplayComponent);
     return AlertDisplayComponent;
 }());
-AlertDisplayComponent = __decorate([
-    core_1.Component({
-        selector: 'app-alert-display',
-        templateUrl: 'app/NG2/alert-display/alert-display.component.html'
-    }),
-    __metadata("design:paramtypes", [alert_service_1.AlertService])
-], AlertDisplayComponent);
 exports.AlertDisplayComponent = AlertDisplayComponent;
