@@ -1,0 +1,62 @@
+<h1>Documentation</h1>
+<div class="app-divider"></div>
+
+<div class="doc-container">
+  <div class="doc-title">
+    <h2>Chartist Component</h2>
+  </div>
+  <div class="doc-example">
+    <x-chartist
+      [data]="chart.data"
+      [type]="chart.type"
+      [options]="chart.options"
+      [responsiveOptions]="chart.responsiveOptions"
+      [events]="chart.events">
+    </x-chartist>
+  </div>
+  <div class="doc-snippet">
+    <pre class="prettyprint">
+      <code code-display>
+  &lt;x-chartist
+    [data]="chart.data"
+    [type]="chart.type"
+    [options]="chart.options"
+    [responsiveOptions]="chart.responsiveOptions"
+    [events]="chart.events">
+  &lt;/x-chartist>
+      </code>
+    </pre>
+  </div>
+</div>
+
+<div class="app-divider"></div>
+
+<div class="doc-container">
+  <div class="doc-title">
+    <h2>Accordion Component</h2>
+  </div>
+  <div class="doc-example">
+    <app-accordion [title]="'Jason Rocks'">
+      <div class="ac-secondary">
+        <div class="spx-pill spx-pill--pr">I win</div>
+      </div>
+      <div class="ac-content">
+        Content Transclusion
+      </div>
+    </app-accordion>
+  </div>
+  <div class="doc-snippet">
+    <pre class="prettyprint">
+      <code code-display>
+  &lt;app-accordion [title]="string">
+    <div class="ac-secondary">
+      ((Content Transclusion))
+    </div>
+    <div class="ac-content">
+      ((Content Transclusion))
+    </div>
+  &lt;/app-accordion>
+      </code>
+    </pre>
+  </div>
+</div>

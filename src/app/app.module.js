@@ -15,12 +15,11 @@ var chartist_component_1 = require("./chartist/chartist.component");
 // COMPONENTS
 var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./components/welcome/welcome.component");
+var docs_component_1 = require("./docs/docs.component");
 // DIRECTIVES
 var code_display_directive_1 = require("./shared/code-display.directive");
 // PROVIDER BARRELS
-// import {
-//   SixPixelsProvider
-// } from './components'
+var components_1 = require("./components");
 var NG2_1 = require("./NG2");
 // ALERTS
 var alert_1 = require("./services/alert/alert");
@@ -43,8 +42,9 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             welcome_component_1.WelcomeComponent,
             code_display_directive_1.CodeDisplayDirective,
-            alert_1.AlertComponent
-        ].concat(NG2_1.Ng2Provider),
+            alert_1.AlertComponent,
+            docs_component_1.DocsComponent
+        ].concat(components_1.LunaProvider, NG2_1.Ng2Provider),
         providers: [
             alert_service_1.AlertService
         ],

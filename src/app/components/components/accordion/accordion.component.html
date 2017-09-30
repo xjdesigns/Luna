@@ -1,0 +1,20 @@
+<div class="spx-ac" [class.is-active]="accordionOpen">
+  <div class="spx-ac__pane">
+    <div class="spx-ac-title">
+      {{title}}
+    </div>
+    <div class="spx-ac-secondary">
+      <ng-content select=".ac-secondary"></ng-content>
+    </div>
+    <div class="spx-ac-action">
+      <button
+        class="spx-btn"
+        data-icon="keyboard_arrow_down"
+        (click)="toggleAccordion()"
+      ></button>
+    </div>
+  </div>
+  <div class="spx-ac__content">
+    <ng-content select=".ac-content"></ng-content>
+  </div>
+</div>

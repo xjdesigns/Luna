@@ -12,14 +12,15 @@ import {
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { DocsComponent } from './docs/docs.component';
 
 // DIRECTIVES
 import { CodeDisplayDirective } from './shared/code-display.directive';
 
 // PROVIDER BARRELS
-// import {
-//   SixPixelsProvider
-// } from './components'
+import {
+  LunaProvider
+} from './components'
 import { Ng2Component, Ng2Provider } from './NG2';
 
 // ALERTS
@@ -40,7 +41,8 @@ import { AlertService } from './services/alert-service';
     WelcomeComponent,
     CodeDisplayDirective,
     AlertComponent,
-    // ...SixPixelsProvider
+    DocsComponent,
+    ...LunaProvider,
     ...Ng2Provider
   ],
   providers: [
