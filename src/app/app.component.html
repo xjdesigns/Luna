@@ -20,6 +20,7 @@
   <div class="app__base">
     <div>Current Count: {{ data.store_number }}</div>
     <div>Current PROMO: {{ data.promos.promo }}</div>
+    <div [routerLink]="['/welcome']" [routerLinkActive]="['is-active']">Home</div>
     <button class="spx-btn spx-btn--pr" (click)="wango()">Wango</button>
     <router-outlet></router-outlet>
   </div>

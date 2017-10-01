@@ -39,7 +39,7 @@ interface State {
 export class AppComponent {
   appMenuOpen: boolean = false;
   data: State;
-  counter: Observable<State>;
+  state: Observable<State>;
 
   constructor(private router: Router, private as: AlertService, private store: Store<AppState>) {
     let b = document.querySelector('body');
@@ -49,8 +49,8 @@ export class AppComponent {
         this.appMenuOpen = false;
       }
     });
-    this.counter = store.select('state');
-    this.counter.subscribe(v => {
+    this.state = store.select('state');
+    this.state.subscribe(v => {
       this.data = v;
     });
   }

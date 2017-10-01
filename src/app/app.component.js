@@ -27,8 +27,8 @@ var AppComponent = (function () {
                 _this.appMenuOpen = false;
             }
         });
-        this.counter = store.select('state');
-        this.counter.subscribe(function (v) {
+        this.state = store.select('state');
+        this.state.subscribe(function (v) {
             _this.data = v;
         });
     }

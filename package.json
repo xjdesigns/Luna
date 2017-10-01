@@ -19,8 +19,10 @@
     "copy-dist-files": "node ./copy-dist-files.js",
     "i18n": "ng-xi18n",
     "lint": "tslint ./src/**/*.ts -t verbose",
-    "sass": "gulp watch"
+    "sass": "gulp watch",
+    "electron": "electron ."
   },
+  "main": "main.js",
   "licenses": [
     {
       "type": "MIT",
@@ -46,6 +48,7 @@
     "angular-in-memory-web-api": "~0.3.1",
     "chartist": "^0.11.0",
     "core-js": "^2.4.1",
+    "electron": "^1.7.8",
     "lodash": "^4.17.4",
     "ng-chartist": "^1.1.1",
     "rxjs": "5.4.2",
