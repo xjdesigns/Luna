@@ -29,7 +29,7 @@ import { AlertService } from './services/alert-service';
 
 // REDUX
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './counter';
+import { stateReducer } from './reducers/state.reducer';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { counterReducer } from './counter';
     HttpModule,
     AppRoutingModule,
     ChartistModule,
-    StoreModule.forRoot({ counter: counterReducer })
+    StoreModule.forRoot({ state: stateReducer })
   ],
   declarations: [
     AppComponent,

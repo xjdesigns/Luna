@@ -9,37 +9,20 @@
         ></div>
       </div>
       <div class="spx-media__body small-font-size">
-        <p>LUNA</p>
-        <p>Store: Coon Rapids, MN T2145</p>
-        <p>Store Hours: 9am - 10pm</p>
+        <p>PROJECT LUNA</p>
+        <p>Store: {{data.city}} {{data.store_name}}</p>
+        <p>Store Hours: {{data.store_hours}}</p>
       </div>
       <button class="spx-btn spx-btn--circle spx-btn--sd" data-icon="check" (click)="createAlert()"></button>
       <app-countdown [date]="'2018-05-06'"></app-countdown>
     </div>
   </header>
   <div class="app__base">
-    <div>Current Count: {{ jason.number }}</div>
-    <button class="sox-btn spx-btn--primary" (click)="increment()">Increment</button>
+    <div>Current Count: {{ data.store_number }}</div>
+    <div>Current PROMO: {{ data.promos.promo }}</div>
+    <button class="spx-btn spx-btn--pr" (click)="wango()">Wango</button>
     <router-outlet></router-outlet>
   </div>
-
-  <!-- // MENU -->
-  <!-- <div class="app-menu" [class.is-open]="appMenuOpen">
-    <div class="app-menu__item app-menu__item--user">
-      <div class="spx-media">
-        <div class="spx-media__element">
-          <i class="material-icons">check</i>
-        </div>
-        <div class="spx-media__body">
-          <p>Jason</p>
-          <p>2017/0/7</p>
-        </div>
-      </div>
-    </div>
-    <div class="app-menu__item">
-      <i class="material-icons">check</i>
-    </div>
-  </div> -->
 </div>
 
 <!-- alert tag for service -->

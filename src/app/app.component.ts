@@ -5,12 +5,29 @@ import { AlertService } from './services/alert-service';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { INCREMENT, DECREMENT, RESET } from './counter';
+import { ONEONE, TWOTWO } from './reducers/state.reducer';
 
 interface AppState {
-  counter: any = {
-    number: any,
-    name: 'string'
+  state: {
+    store_number: number,
+    store_name: string,
+    city: string,
+    store_hours: string,
+    promos: {
+      promo: string,
+      details: string
+    }
+  }
+}
+
+interface State {
+  store_number: number,
+  store_name: string,
+  city: string,
+  store_hours: string,
+  promos: {
+    promo: string,
+    details: string
   }
 }
 
@@ -21,8 +38,8 @@ interface AppState {
 
 export class AppComponent {
   appMenuOpen: boolean = false;
-  jason: any;
-  counter: Observable<number>;
+  data: State;
+  counter: Observable<State>;
 
   constructor(private router: Router, private as: AlertService, private store: Store<AppState>) {
     let b = document.querySelector('body');
@@ -32,22 +49,15 @@ export class AppComponent {
         this.appMenuOpen = false;
       }
     });
-    this.counter = store.select('counter');
+    this.counter = store.select('state');
     this.counter.subscribe(v => {
-      console.warn(v);
-      this.jason = v;
-      console.warn('jason', this.jason);
+      this.data = v;
     });
-    console.warn(this.counter);
   }
 
-  increment(){
-		this.store.dispatch({ type: INCREMENT });
-	}
-
-	decrement(){
-		this.store.dispatch({ type: DECREMENT });
-	}
+  wango() {
+    this.store.dispatch({ type: ONEONE });
+  }
 
   toggleMenu() {
     this.appMenuOpen = !this.appMenuOpen;

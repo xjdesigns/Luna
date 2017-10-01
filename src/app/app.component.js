@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var alert_service_1 = require("./services/alert-service");
 var store_1 = require("@ngrx/store");
-var counter_1 = require("./counter");
+var state_reducer_1 = require("./reducers/state.reducer");
 var AppComponent = (function () {
     function AppComponent(router, as, store) {
         var _this = this;
@@ -27,19 +27,13 @@ var AppComponent = (function () {
                 _this.appMenuOpen = false;
             }
         });
-        this.counter = store.select('counter');
+        this.counter = store.select('state');
         this.counter.subscribe(function (v) {
-            console.warn(v);
-            _this.jason = v;
-            console.warn('jason', _this.jason);
+            _this.data = v;
         });
-        console.warn(this.counter);
     }
-    AppComponent.prototype.increment = function () {
-        this.store.dispatch({ type: counter_1.INCREMENT });
-    };
-    AppComponent.prototype.decrement = function () {
-        this.store.dispatch({ type: counter_1.DECREMENT });
+    AppComponent.prototype.wango = function () {
+        this.store.dispatch({ type: state_reducer_1.ONEONE });
     };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;

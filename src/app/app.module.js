@@ -26,7 +26,7 @@ var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
 // REDUX
 var store_1 = require("@ngrx/store");
-var counter_1 = require("./counter");
+var state_reducer_1 = require("./reducers/state.reducer");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -38,7 +38,7 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule,
                 chartist_component_1.ChartistModule,
-                store_1.StoreModule.forRoot({ counter: counter_1.counterReducer })
+                store_1.StoreModule.forRoot({ state: state_reducer_1.stateReducer })
             ],
             declarations: [
                 app_component_1.AppComponent,
