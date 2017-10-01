@@ -5,11 +5,13 @@ import {
 } from '@angular/router';
 
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { MainComponent } from './components/main/main.component';
 import { DocsComponent } from './docs/docs.component';
 // import { ComponentsRouting } from './components/components/components.routes';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'docs', component: DocsComponent }
   // ...ComponentsRouting

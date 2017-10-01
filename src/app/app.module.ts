@@ -12,6 +12,7 @@ import {
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { MainComponent } from './components/main/main.component';
 import { DocsComponent } from './docs/docs.component';
 
 // DIRECTIVES
@@ -43,6 +44,7 @@ import { stateReducer } from './reducers/state.reducer';
   ],
   declarations: [
     AppComponent,
+    MainComponent,
     WelcomeComponent,
     CodeDisplayDirective,
     AlertComponent,
