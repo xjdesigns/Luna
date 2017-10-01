@@ -21,19 +21,27 @@ var AppComponent = (function () {
         this.as = as;
         this.store = store;
         this.appMenuOpen = false;
+        this.countdownData = '';
         var b = document.querySelector('body');
         this.router.events.subscribe(function (e) {
             if (e instanceof router_1.NavigationStart) {
                 _this.appMenuOpen = false;
             }
         });
-        this.state = store.select('state');
+        this.state = store.select(function (s) { return s.state; });
         this.state.subscribe(function (v) {
             _this.data = v;
+        });
+        this.promoData = store.select(function (s) { return s.state.promos; });
+        this.promoData.subscribe(function (j) {
+            console.warn('the data', j);
         });
     }
     AppComponent.prototype.wango = function () {
         this.store.dispatch({ type: state_reducer_1.ONEONE });
+    };
+    AppComponent.prototype.tango = function () {
+        this.store.dispatch({ type: state_reducer_1.THREETHREE });
     };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;

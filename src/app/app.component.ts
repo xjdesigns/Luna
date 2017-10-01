@@ -5,7 +5,7 @@ import { AlertService } from './services/alert-service';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { ONEONE, TWOTWO } from './reducers/state.reducer';
+import { ONEONE, TWOTWO, THREETHREE } from './reducers/state.reducer';
 
 export interface promotional {
   promo: string,
@@ -40,6 +40,8 @@ export class AppComponent {
   appMenuOpen: boolean = false;
   data: State;
   state: Observable<State>;
+  promoData: Observable<promotional>;
+  countdownData: string = '';
 
   constructor(private router: Router, private as: AlertService, private store: Store<AppState>) {
     let b = document.querySelector('body');
@@ -49,14 +51,22 @@ export class AppComponent {
         this.appMenuOpen = false;
       }
     });
-    this.state = store.select('state');
+    this.state = store.select(s => s.state);
     this.state.subscribe(v => {
       this.data = v;
+    });
+    this.promoData = store.select(s => s.state.promos);
+    this.promoData.subscribe(j => {
+      console.warn('the data', j);
     });
   }
 
   wango() {
     this.store.dispatch({ type: ONEONE });
+  }
+
+  tango() {
+    this.store.dispatch({ type: THREETHREE });
   }
 
   toggleMenu() {

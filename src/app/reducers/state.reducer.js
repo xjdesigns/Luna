@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ONEONE = 'ONEONE';
 exports.TWOTWO = 'TWOTWO';
+exports.THREETHREE = 'THREETHREE';
 var storeDef = {
     store_number: 1234,
     store_name: 'T2124',
@@ -22,6 +23,16 @@ function stateReducer(state, action) {
             return Object.assign({}, state, o);
         case exports.TWOTWO:
             o = { store_number: state.store_number - 1 };
+            return Object.assign({}, state, o);
+        case exports.THREETHREE:
+            o = {
+                promos: {
+                    promo: 'SEGA',
+                    details: 'Hello world',
+                    date: '2017/12/25'
+                }
+            };
+            console.warn('OBJ::', Object.assign({}, state, o));
             return Object.assign({}, state, o);
         default:
             return state;
