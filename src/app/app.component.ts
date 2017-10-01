@@ -7,16 +7,19 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { ONEONE, TWOTWO } from './reducers/state.reducer';
 
+export interface promotional {
+  promo: string,
+  details: string,
+  date: string
+}
+
 interface AppState {
   state: {
     store_number: number,
     store_name: string,
     city: string,
     store_hours: string,
-    promos: {
-      promo: string,
-      details: string
-    }
+    promos: promotional
   }
 }
 
@@ -25,10 +28,7 @@ interface State {
   store_name: string,
   city: string,
   store_hours: string,
-  promos: {
-    promo: string,
-    details: string
-  }
+  promos: promotional
 }
 
 @Component({

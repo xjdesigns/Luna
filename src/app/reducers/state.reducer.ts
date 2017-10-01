@@ -10,21 +10,23 @@ let storeDef = {
   store_hours: '9a - 5p',
   promos: {
     promo: 'SNES CLASSIC',
-    details: 'This is it'
+    details: 'This is it',
+    date: '2019/12/25'
   }
 }
 
 export function stateReducer(state: any = storeDef, action: Action) {
-	switch (action.type) {
-		case ONEONE:
-      let o = { store_number: state.store_number + 1 };
+  var o;
+  switch (action.type) {
+    case ONEONE:
+      o = { store_number: state.store_number + 1 };
       return Object.assign({}, state, o);
 
-		case TWOTWO:
-			let o = { store_number: state.store_number - 1 };
+    case TWOTWO:
+      o = { store_number: state.store_number - 1 };
       return Object.assign({}, state, o);
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 }

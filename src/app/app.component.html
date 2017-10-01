@@ -14,7 +14,7 @@
         <p>Store Hours: {{data.store_hours}}</p>
       </div>
       <button class="spx-btn spx-btn--circle spx-btn--sd" data-icon="check" (click)="createAlert()"></button>
-      <app-countdown [date]="'2018-05-06'"></app-countdown>
+      <app-countdown [date]="data.promos.date"></app-countdown>
     </div>
   </header>
   <div class="app__base">
