@@ -13,17 +13,34 @@
         <p>Store: {{data.city}} {{data.store_name}}</p>
         <p>Store Hours: {{data.store_hours}}</p>
       </div>
-      <button class="spx-btn spx-btn--circle spx-btn--sd" data-icon="check" (click)="createAlert()"></button>
-      <app-countdown [date]="data.promos.date"></app-countdown>
+      <!-- <button class="spx-btn spx-btn--circle spx-btn--sd" data-icon="check" (click)="createAlert()"></button>
+      <app-countdown [date]="data.promos.date"></app-countdown> -->
     </div>
   </header>
   <div class="app__base">
-    <div>Current Count: {{ data.store_number }}</div>
+    <!-- <div>Current Count: {{ data.store_number }}</div>
     <div>Current PROMO: {{ data.promos.promo }}</div>
     <div [routerLink]="['/welcome']" [routerLinkActive]="['is-active']">Home</div>
     <button class="spx-btn spx-btn--pr" (click)="wango()">Wango</button>
-    <button class="spx-btn spx-btn--sd" (click)="tango()">Tango</button>
-    <router-outlet></router-outlet>
+    <button class="spx-btn spx-btn--sd" (click)="tango()">Tango</button> -->
+    <div class="app-base-side">
+      <div>
+        <button class="spx-btn spx-btn--circle spx-btn--pr" data-icon="dashboard" (click)="toggleMenu()"></button>
+      </div>
+      <div>
+        <button class="spx-btn spx-btn--circle spx-btn--pr" data-icon="person"></button>
+      </div>
+      <div>
+        <button class="spx-btn spx-btn--circle spx-btn--pr" data-icon="personal_video"></button>
+      </div>
+
+      <div class="app-base-menu" [class.is-open]="appMenuOpen">
+        <button class="spx-btn spx-btn--circle spx-btn--pr" data-icon="close" (click)="toggleMenu()"></button>
+      </div>
+    </div>
+    <div class="app-base-routes">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 
