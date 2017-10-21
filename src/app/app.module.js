@@ -27,7 +27,8 @@ var alert_1 = require("./services/alert/alert");
 var alert_service_1 = require("./services/alert-service");
 // REDUX
 var store_1 = require("@ngrx/store");
-var state_reducer_1 = require("./reducers/state.reducer");
+var store_devtools_1 = require("@ngrx/store-devtools");
+var reducer_1 = require("./redux/reducer");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +40,8 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule,
                 chartist_component_1.ChartistModule,
-                store_1.StoreModule.forRoot({ state: state_reducer_1.stateReducer })
+                store_1.StoreModule.forRoot({ state: reducer_1.default }),
+                store_devtools_1.StoreDevtoolsModule.instrument()
             ],
             declarations: [
                 app_component_1.AppComponent,

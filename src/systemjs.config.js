@@ -31,11 +31,14 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       '@ngrx/store': 'npm:@ngrx/store/bundles/store.umd.js',
+      '@ngrx/store-devtools': 'npm:@ngrx/store-devtools/bundles/store-devtools.umd.js',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'chartist': 'node_modules/chartist/dist/chartist.js',
       'NG2': 'app/NG2',
       'lodash': 'npm:lodash/lodash.js',
-      'components': 'app/components'
+      'components': 'app/components',
+      'redux': 'npm:redux/dist/redux.js',
+      'redux-actions': 'npm:redux-actions/dist/redux-actions.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

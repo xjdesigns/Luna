@@ -13,7 +13,6 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var alert_service_1 = require("./services/alert-service");
 var store_1 = require("@ngrx/store");
-var state_reducer_1 = require("./reducers/state.reducer");
 var AppComponent = (function () {
     function AppComponent(router, as, store) {
         var _this = this;
@@ -22,6 +21,7 @@ var AppComponent = (function () {
         this.store = store;
         this.appMenuOpen = false;
         this.countdownData = '';
+        this.innerOpen = '';
         var b = document.querySelector('body');
         this.router.events.subscribe(function (e) {
             if (e instanceof router_1.NavigationStart) {
@@ -37,11 +37,9 @@ var AppComponent = (function () {
             console.warn('the data', j);
         });
     }
-    AppComponent.prototype.wango = function () {
-        this.store.dispatch({ type: state_reducer_1.ONEONE });
-    };
-    AppComponent.prototype.tango = function () {
-        this.store.dispatch({ type: state_reducer_1.THREETHREE });
+    AppComponent.prototype.openInner = function (which) {
+        var the = this.innerOpen.indexOf(which);
+        this.innerOpen = (this.innerOpen.indexOf(which) === -1) ? which : '';
     };
     AppComponent.prototype.toggleMenu = function () {
         this.appMenuOpen = !this.appMenuOpen;

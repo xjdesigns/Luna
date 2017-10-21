@@ -42,6 +42,7 @@ export class AppComponent {
   state: Observable<State>;
   promoData: Observable<promotional>;
   countdownData: string = '';
+  innerOpen: string = '';
 
   constructor(private router: Router, private as: AlertService, private store: Store<AppState>) {
     let b = document.querySelector('body');
@@ -61,12 +62,9 @@ export class AppComponent {
     });
   }
 
-  wango() {
-    this.store.dispatch({ type: ONEONE });
-  }
-
-  tango() {
-    this.store.dispatch({ type: THREETHREE });
+  openInner(which) {
+    var the = this.innerOpen.indexOf(which);
+    this.innerOpen = (this.innerOpen.indexOf(which) === -1) ? which : '';
   }
 
   toggleMenu() {

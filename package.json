@@ -44,6 +44,7 @@
     "@angular/upgrade": "~4.0.0",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^4.0.3",
+    "@ngrx/store-devtools": "^4.0.0",
     "@types/lodash": "^4.14.65",
     "angular-in-memory-web-api": "~0.3.1",
     "chartist": "^0.11.0",
@@ -51,6 +52,8 @@
     "electron": "^1.7.8",
     "lodash": "^4.17.4",
     "ng-chartist": "^1.1.1",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
     "rxjs": "5.4.2",
     "systemjs": "0.19.39",
     "zone.js": "^0.8.4"

@@ -50,6 +50,57 @@
   }
 }
 
+.app-menubar {
+  font-size: 12px;
+  border-bottom: 1px solid $grey-d1;
+
+  & > ul {
+    cursor: pointer;
+
+    & > li {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 3px 6px;
+
+      &:hover,
+      &.is-active {
+        background: $grey-l1;
+      }
+    }
+  }
+}
+.app-menuinner {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  background: white;
+  min-width: 160px;
+  border: 1px solid $grey-d1;
+  @include elevation-2;
+  display: none;
+
+  li {
+    padding: 12px;
+    border-bottom: 1px solid $grey-d1;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.app-notification-action {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+}
+
 .app {
   position: relative;
   width: 100%;
@@ -62,6 +113,7 @@
   }
   &__base {
     display: flex;
+    height: calc(100vh - 72px);
   }
 
   .app-base-side {
@@ -82,6 +134,7 @@
   .app-base-routes {
     flex: 1;
     padding: 12px;
+    overflow-y: scroll;
   }
 }
 
@@ -172,3 +225,18 @@
 //     stroke: rgba(255,255,255,.2);
 //   }
 // }
+
+
+// TABLE
+.app-grid {
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+
+  th,
+  td {
+    padding: 6px;
+    font-size: .875rem;
+    border: 1px solid $grey-l1;
+  }
+}
