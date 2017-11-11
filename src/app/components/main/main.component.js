@@ -14,13 +14,14 @@ var store_1 = require("@ngrx/store");
 var actions_1 = require("../../redux/actions");
 var MainComponent = (function () {
     function MainComponent(store) {
+        var _this = this;
         this.store = store;
         this.store.dispatch(actions_1.default.metrics.update());
-        // this.state = store.select(s => s.state.metrics);
-        // this.state.subscribe(state => {
-        //   console.warn('STATE::', state);
-        //   this.stateData = state;
-        // });
+        this.state = store.select(function (s) { return s.state.metrics; });
+        this.state.subscribe(function (state) {
+            console.warn('STATE::', state);
+            _this.stateData = state;
+        });
     }
     MainComponent.prototype.hello = function () {
         this.store.dispatch(actions_1.default.jason.testme());

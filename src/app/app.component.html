@@ -1,19 +1,43 @@
 <div class="app">
   <header class="app__header">
-    <div class="spx-media spx-media--middle">
-      <div class="spx-media__element">
-        <div
-          class="tgt-logo"
-          (mouseup)="toggleMenu()"
-          [class.is-open]="appMenuOpen"
-        ></div>
-      </div>
-      <div class="spx-media__body small-font-size">
-        <p>PROJECT LUNA</p>
-      </div>
+    <div class="app-header-actions">
+      <!-- <div
+        class="tgt-logo"
+        (mouseup)="toggleMenu()"
+        [class.is-open]="appMenuOpen"
+      ></div> -->
+      <span>APEX</span>
+      <div class="app-vert-divider"></div>
+      <i class="material-icons">undo</i>
+      <i class="material-icons">redo</i>
+      <i class="material-icons">eject</i>
     </div>
   </header>
-  <div class="app-menubar">
+
+  <div class="app-tab-bar">
+    <div class="app-tab-bar__tabs">
+      <div class="app-tab is-active">
+        File
+      </div>
+      <div class="app-tab">
+        Assortment
+      </div>
+      <div class="app-tab">
+        Negotiations
+      </div>
+      <div class="app-tab">
+        Locations
+      </div>
+      <div class="app-tab">
+        Clusters
+      </div>
+    </div>
+  </div>
+  <div class="app-tab-content">
+    <div>tab content would go here</div>
+    <div>File tab would open a flyout menu, grid tab would over take this as same size or bigger doing an overlay with absolute positioning. This is where we could do all base API work with ag grid.</div>
+  </div>
+  <!-- <div class="app-menubar">
     <ul>
       <li [class.is-active]="innerOpen === 'file' ? true : false">
         <span (click)="openInner('file')">File</span>
@@ -48,7 +72,7 @@
         </ul>
       </li>
     </ul>
-  </div>
+  </div> -->
   <div class="app__base">
     <div class="app-base-routes">
       <router-outlet></router-outlet>

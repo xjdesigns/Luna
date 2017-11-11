@@ -12,11 +12,11 @@ export class MainComponent {
   constructor(private store: Store<any>) {
     this.store.dispatch(actions.metrics.update())
 
-    // this.state = store.select(s => s.state.metrics);
-    // this.state.subscribe(state => {
-    //   console.warn('STATE::', state);
-    //   this.stateData = state;
-    // });
+    this.state = store.select(s => s.state.metrics);
+    this.state.subscribe(state => {
+      console.warn('STATE::', state);
+      this.stateData = state;
+    });
   }
 
   hello() {

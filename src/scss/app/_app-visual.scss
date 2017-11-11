@@ -1,3 +1,6 @@
+$app-grey-1: #dcdcdc;
+$app-grey-2: #b5b5b5;
+
 .tgt-logo {
   position: relative;
   display: inline-block;
@@ -50,6 +53,7 @@
   }
 }
 
+// app inner menu
 .app-menubar {
   font-size: 12px;
   border-bottom: 1px solid $grey-d1;
@@ -65,7 +69,7 @@
 
       &:hover,
       &.is-active {
-        background: $grey-l1;
+        background: $app-grey-1;
       }
     }
   }
@@ -101,6 +105,8 @@
   right: 24px;
 }
 
+
+// app
 .app {
   position: relative;
   width: 100%;
@@ -108,7 +114,7 @@
 
   &__header {
     padding: 12px;
-    background: $grey-d1;
+    background: $app-grey-2;
     color: white;
   }
   &__base {
@@ -138,6 +144,70 @@
   }
 }
 
+ // actions
+.app-header-actions {
+  display: flex;
+  align-items: center;
+
+  & > span {
+    font-size: .875rem;
+  }
+  .material-icons {
+    font-size: .875rem;
+  }
+}
+
+// app tabs
+.app-tab-bar {
+  display: flex;
+  background: $app-grey-2;
+  border-bottom: 1px solid $success;
+
+  &__tabs {
+    flex: 1;
+    margin-bottom: -1px;
+  }
+
+  .app-tab {
+    display: inline-block;
+    margin: 0 3px 0 0;
+    padding: 3px 12px;
+    background: $app-grey-1;
+    color: black;
+    font-size: .75rem;
+    border-radius: 3px 3px 0 0;
+    border: 1px solid $success;
+    border-bottom: none;
+
+    &.is-active {
+      background: $success;
+      color: white;
+    }
+  }
+}
+
+// app tab content
+.app-tab-content {
+  height: 104px;
+  background: $app-grey-1;
+  border-bottom: 1px solid $success;
+}
+
+// divider vertical
+.app-vert-divider {
+  width: 1px;
+  min-height: 12px;
+  margin: 0 6px;
+  background: white;
+}
+
+
+
+
+
+
+
+// TODO:: OLD
 .app-base-menu {
   position: fixed;
   top: 0px;
@@ -212,7 +282,7 @@
 .app-divider {
   height: 1px;
   margin: 12px 0;
-  background: $grey-l1;
+  background: $app-grey-1;
 }
 
 // CHART TRUMP CODE
@@ -237,6 +307,6 @@
   td {
     padding: 6px;
     font-size: .875rem;
-    border: 1px solid $grey-l1;
+    border: 1px solid $app-grey-1;
   }
 }
