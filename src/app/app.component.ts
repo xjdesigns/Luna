@@ -40,7 +40,7 @@ export class AppComponent {
   appMenuOpen: boolean = false;
   data: State;
   state: Observable<State>;
-  promoData: Observable<promotional>;
+  storeData: Observable<promotional>;
   countdownData: string = '';
   innerOpen: string = '';
 
@@ -56,8 +56,8 @@ export class AppComponent {
     this.state.subscribe(v => {
       this.data = v;
     });
-    this.promoData = store.select(s => s.state.promos);
-    this.promoData.subscribe(j => {
+    this.storeData = store.select(s => s.state.store);
+    this.storeData.subscribe(j => {
       console.warn('the data', j);
     });
   }

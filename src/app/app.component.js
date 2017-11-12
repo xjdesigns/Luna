@@ -32,8 +32,8 @@ var AppComponent = (function () {
         this.state.subscribe(function (v) {
             _this.data = v;
         });
-        this.promoData = store.select(function (s) { return s.state.promos; });
-        this.promoData.subscribe(function (j) {
+        this.storeData = store.select(function (s) { return s.state.store; });
+        this.storeData.subscribe(function (j) {
             console.warn('the data', j);
         });
     }

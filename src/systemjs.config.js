@@ -38,7 +38,9 @@
       'lodash': 'npm:lodash/lodash.js',
       'components': 'app/components',
       'redux': 'npm:redux/dist/redux.js',
-      'redux-actions': 'npm:redux-actions/dist/redux-actions.js'
+      'redux-actions': 'npm:redux-actions/dist/redux-actions.js',
+      'ag-grid-angular' : 'node_modules/ag-grid-angular',
+      'ag-grid' : 'node_modules/ag-grid'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -61,6 +63,12 @@
       'components': {
         main: 'index.js',
         defaultExtension: 'js'
+      },
+      'ag-grid': {
+        main: 'main.js'
+      },
+      'ag-grid-angular': {
+        main: 'main.js'
       }
     }
   });

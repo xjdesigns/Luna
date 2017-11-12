@@ -1,5 +1,8 @@
-$app-grey-1: #dcdcdc;
-$app-grey-2: #b5b5b5;
+$app-grey-1: #f7f7f7;
+$app-grey-2: #f1f1f1;
+$app-grey-3: #a2a2a2;
+
+$app-primary: #004280;
 
 .tgt-logo {
   position: relative;
@@ -21,89 +24,9 @@ $app-grey-2: #b5b5b5;
     border-radius: 50%;
     border: 6px solid red;
     transform: scale(1);
-    transition: transform .5s ease-in-out;
-  }
-
-  &::after {
-    content: 'close';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-family: $liga-font-family;
-    font-size: 3rem;
-    color: red;
-    transform-origin: 0 0;
-    transform: scale(0) translate(-50%, -50%);
-    transition: transform .5s ease-in-out;
-  }
-
-  &.is-open {
-    &::before {
-      transform: scale(0, 0);
-    }
-    &::after {
-      transform: scale(1, 1) translate(-50%, -50%);
-    }
   }
 }
 
-.small-font-size {
-  & > p {
-    font-size: 12px;
-  }
-}
-
-// app inner menu
-.app-menubar {
-  font-size: 12px;
-  border-bottom: 1px solid $grey-d1;
-
-  & > ul {
-    cursor: pointer;
-
-    & > li {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      padding: 3px 6px;
-
-      &:hover,
-      &.is-active {
-        background: $app-grey-1;
-      }
-    }
-  }
-}
-.app-menuinner {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 2;
-  background: white;
-  min-width: 160px;
-  border: 1px solid $grey-d1;
-  @include elevation-2;
-  display: none;
-
-  li {
-    padding: 12px;
-    border-bottom: 1px solid $grey-d1;
-
-    &:last-of-type {
-      border-bottom: none;
-    }
-  }
-
-  &.is-open {
-    display: block;
-  }
-}
-
-.app-notification-action {
-  position: fixed;
-  top: 24px;
-  right: 24px;
-}
 
 
 // app
@@ -113,47 +36,83 @@ $app-grey-2: #b5b5b5;
   height: 100%;
 
   &__header {
-    padding: 12px;
+    display: flex;
+    height: 32px;
+    max-height: 32px;
+    padding: 6px;
     background: $app-grey-2;
-    color: white;
+    color: $grey-d1;
   }
+
   &__base {
     display: flex;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 32px - 26px - 124px - 36px); // TODO: calc this off of variables to manage better
+    background: $app-grey-2;
+    transition: height 1s ease-in-out;
   }
 
-  .app-base-side {
-    flex: 0 0 auto;
-    position: relative;
-    padding: 12px;
-    background: $grey-d1;
-
-    & > div {
-      margin-bottom: 12px;
-    }
-
-    .spx-btn--circle {
-      height: 28px;
-      min-width: 28px;
-    }
+  &__footer {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 6px;
+    background: $app-primary;
+    color: white;
+    font-size: .75rem;
   }
+
   .app-base-routes {
     flex: 1;
-    padding: 12px;
     overflow-y: scroll;
   }
 }
 
  // actions
 .app-header-actions {
+  flex: 0 0 33.3%;
   display: flex;
   align-items: center;
 
   & > span {
     font-size: .875rem;
   }
+}
+
+// app title
+.app-header-title {
+  flex: 0 0 33.3%;
+  text-align: center;
+  font-size: .75rem;
+}
+
+// app secondary
+.app-header-secondary {
+  flex: 0 0 33.3%;
+  text-align: right;
+
   .material-icons {
     font-size: .875rem;
+  }
+}
+
+// footer
+.app-footer-details {
+  flex: 1 0 auto;
+}
+.app-footer-pagination {
+  flex: 0 0 auto;
+}
+// BUTTON TRUMP
+.app-header-actions,
+.app-header-secondary {
+  .spx-btn--circle {
+    height: 20px;
+    min-width: 20px;
+
+    &::before {
+      font-size: .875rem;
+      line-height: 1.2;
+    }
   }
 }
 
@@ -161,36 +120,134 @@ $app-grey-2: #b5b5b5;
 .app-tab-bar {
   display: flex;
   background: $app-grey-2;
-  border-bottom: 1px solid $success;
+  border-bottom: 1px solid $app-grey-3;
 
   &__tabs {
     flex: 1;
     margin-bottom: -1px;
   }
 
+  &__ext {
+    margin-bottom: -1px;
+  }
+
+  .material-icons {
+    font-size: .875rem;
+    height: 1em;
+    line-height: 1;
+  }
+
   .app-tab {
     display: inline-block;
-    margin: 0 3px 0 0;
-    padding: 3px 12px;
-    background: $app-grey-1;
+    padding: 6px 12px;
     color: black;
     font-size: .75rem;
     border-radius: 3px 3px 0 0;
-    border: 1px solid $success;
-    border-bottom: none;
+    cursor: pointer;
+
+    // hover
+    &:not(:first-child):not(.is-active) {
+      &:hover {
+        background: $app-grey-3;
+        color: white;
+      }
+    }
+
+    &:first-child {
+      border-radius: 0 3px 0 0;
+    }
+
+    &--main {
+      background: $app-primary;
+      color: white;
+    }
 
     &.is-active {
-      background: $success;
-      color: white;
+      background: $app-grey-1;
+      color: $app-primary;
+      border: 1px solid $app-grey-3;
+      border-bottom: none;
     }
   }
 }
 
 // app tab content
 .app-tab-content {
-  height: 104px;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+  height: 124px;
+  padding: 12px;
   background: $app-grey-1;
-  border-bottom: 1px solid $success;
+  border-bottom: 1px solid $app-grey-3;
+  font-size: .75rem;
+  transition: height 1s ease-in-out;
+  will-change: height;
+
+  &__action {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  &__empty {
+    font-size: 1.7rem;
+    font-weight: 100;
+  }
+
+  &__sec {
+    flex: 0 0 auto;
+    margin-right: 6px;
+    padding-right: 6px;
+    border-right: 1px solid $app-grey-3;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &--actions {
+      margin-left: auto;
+    }
+  }
+
+  .app-tab-cards {
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    background: transparent;
+    color: $grey-d1;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px transparent;
+    transition: box-shadow .3s ease-in-out, border-color .3s ease;
+    will-change: box-shadow border-color;
+
+    &:hover {
+      @include elevation-1;
+      border-color: $app-primary;
+    }
+  }
+
+  .app-tab-info {
+    p {
+      font-size: .75rem;
+    }
+
+    .app-data-callout {
+      font-size: 1rem;
+      font-weight: 100;
+      color: $app-primary;
+    }
+  }
+
+  .app-tab-box {
+    margin-bottom: 6px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // divider vertical
@@ -198,10 +255,87 @@ $app-grey-2: #b5b5b5;
   width: 1px;
   min-height: 12px;
   margin: 0 6px;
-  background: white;
+  background: $app-grey-3;
 }
 
 
+// AG GRID
+.app-ag-grid {
+  .ag-material {
+    margin-top: 12px;
+    font-family: $font-family-base;
+    font-size: .75rem;
+
+    [role=gridcell] {
+      &:focus,
+      &:active {
+        outline: 0;
+      }
+    }
+
+    .ag-pinned-left-cols-container {
+      .ag-row {
+        .ag-cell-no-focus {
+          border-right: 1px solid $app-grey-3;
+          border-bottom: 1px solid $app-grey-3;
+        }
+        background: $app-grey-2;
+      }
+    }
+
+    .ag-row-odd,
+    .ag-row-even {
+      &.ag-row-selected {
+        background: $app-primary;
+        color: white;
+      }
+    }
+
+    .ag-selection-checkbox {
+      padding: 0;
+    }
+
+    .ag-cell-focus {
+      background: $app-grey-3;
+      color: white;
+      border: 1px solid $app-primary;
+    }
+
+    .ag-header {
+      background: $app-grey-2;
+    }
+
+    .ag-header-cell {
+      padding-left: 6px;
+    }
+
+    .ag-cell-not-inline-editing {
+      padding-top: 0;
+    }
+
+    .ag-ltr {
+      .ag-cell-no-focus {
+        border-left: 1px solid $app-grey-2;
+        border-right: 1px solid $app-grey-2;
+      }
+      .ag-header-cell {
+        border-right: 1px solid $app-grey-3;
+      }
+    }
+
+    .ag-cell-no-focus {
+      border-bottom: 1px solid $app-grey-2;
+    }
+
+    .ag-row-odd {
+      background: $app-grey-1;
+    }
+
+    .ag-cell-not-inline-editing {
+      padding-left: 6px;
+    }
+  }
+}
 
 
 

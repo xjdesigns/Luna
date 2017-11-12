@@ -17,6 +17,7 @@ var app_component_1 = require("./app.component");
 var welcome_component_1 = require("./components/welcome/welcome.component");
 var main_component_1 = require("./components/main/main.component");
 var docs_component_1 = require("./docs/docs.component");
+var home_component_1 = require("./components/home/home.component");
 // DIRECTIVES
 var code_display_directive_1 = require("./shared/code-display.directive");
 // PROVIDER BARRELS
@@ -29,6 +30,7 @@ var alert_service_1 = require("./services/alert-service");
 var store_1 = require("@ngrx/store");
 var store_devtools_1 = require("@ngrx/store-devtools");
 var reducer_1 = require("./redux/reducer");
+var main_1 = require("ag-grid-angular/main");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -41,7 +43,8 @@ var AppModule = (function () {
                 app_routing_module_1.AppRoutingModule,
                 chartist_component_1.ChartistModule,
                 store_1.StoreModule.forRoot({ state: reducer_1.default }),
-                store_devtools_1.StoreDevtoolsModule.instrument()
+                store_devtools_1.StoreDevtoolsModule.instrument(),
+                main_1.AgGridModule.withComponents([])
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -49,7 +52,8 @@ var AppModule = (function () {
                 welcome_component_1.WelcomeComponent,
                 code_display_directive_1.CodeDisplayDirective,
                 alert_1.AlertComponent,
-                docs_component_1.DocsComponent
+                docs_component_1.DocsComponent,
+                home_component_1.HomeComponent
             ].concat(components_1.LunaProvider, NG2_1.Ng2Provider),
             providers: [
                 alert_service_1.AlertService

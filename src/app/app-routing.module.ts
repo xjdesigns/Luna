@@ -7,13 +7,15 @@ import {
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MainComponent } from './components/main/main.component';
 import { DocsComponent } from './docs/docs.component';
+import { HomeComponent } from './components/home/home.component';
 // import { ComponentsRouting } from './components/components/components.routes';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'docs', component: DocsComponent }
+  { path: 'docs', component: DocsComponent },
+  { path: 'home', component: HomeComponent }
   // ...ComponentsRouting
 ];
 

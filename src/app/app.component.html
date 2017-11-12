@@ -4,22 +4,30 @@
       <!-- <div
         class="tgt-logo"
         (mouseup)="toggleMenu()"
-        [class.is-open]="appMenuOpen"
       ></div> -->
       <span>APEX</span>
       <div class="app-vert-divider"></div>
-      <i class="material-icons">undo</i>
-      <i class="material-icons">redo</i>
-      <i class="material-icons">eject</i>
+      <button class="spx-btn spx-btn--pr--inverted spx-btn--circle spx-btn--sm" data-icon="undo"></button>
+      <button class="spx-btn spx-btn--pr--inverted spx-btn--circle spx-btn--sm" data-icon="redo"></button>
+      <button class="spx-btn spx-btn--pr--inverted spx-btn--circle spx-btn--sm" data-icon="eject"></button>
+    </div>
+
+    <div class="app-header-title">
+      Jasons Spring Cart 2018 - Cart Items
+    </div>
+
+    <div class="app-header-secondary">
+      <button class="spx-btn spx-btn--pr--inverted spx-btn--circle spx-btn--sm" data-icon="notifications"></button>
+      <button class="spx-btn spx-btn--pr--inverted spx-btn--circle spx-btn--sm" data-icon="close"></button>
     </div>
   </header>
 
   <div class="app-tab-bar">
     <div class="app-tab-bar__tabs">
-      <div class="app-tab is-active">
+      <div class="app-tab app-tab--main">
         File
       </div>
-      <div class="app-tab">
+      <div class="app-tab is-active">
         Assortment
       </div>
       <div class="app-tab">
@@ -32,50 +40,66 @@
         Clusters
       </div>
     </div>
+    <div class="app-tab-bar__ext">
+      <div class="app-tab">
+        Share
+      </div>
+    </div>
   </div>
   <div class="app-tab-content">
-    <div>tab content would go here</div>
-    <div>File tab would open a flyout menu, grid tab would over take this as same size or bigger doing an overlay with absolute positioning. This is where we could do all base API work with ag grid.</div>
+    <div class="app-tab-content__empty">
+      You have nothing currently selected.
+    </div>
+
+    <!-- <div class="app-tab-content__sec">
+      <div class="app-tab-cards">
+        Add existing items
+      </div>
+      <div class="app-tab-cards">
+        Add new items
+      </div>
+    </div>
+    <div class="app-tab-content__sec">
+      <div class="app-tab-cards">
+        Start Negotiations
+      </div>
+    </div> -->
+
+    <!-- <div class="app-tab-content__sec">
+      <div class="app-tab-info">
+        <p>You have <span class="app-data-callout">32</span> days left until your plan starts</p>
+        <p>You currently have <span class="app-data-callout">1000</span> total items in your cart</p>
+        <p>You have <span class="app-data-callout">2</span> spaces assigned to your plan</p>
+      </div>
+    </div> -->
+
+    <div class="app-tab-content__sec app-tab-content__sec--actions spx-is-disabled" disabled>
+      <div class="app-tab-box">
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="mode_edit"></button>
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="mode_comment"></button>
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="insert_invitation"></button>
+      </div>
+      <div class="app-tab-box">
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="vertical_align_center"></button>
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="view_column"></button>
+        <button class="spx-btn spx-btn--circle spx-btn--pr--inverted spx-btn--sm" data-icon="file_download"></button>
+      </div>
+    </div>
   </div>
-  <!-- <div class="app-menubar">
-    <ul>
-      <li [class.is-active]="innerOpen === 'file' ? true : false">
-        <span (click)="openInner('file')">File</span>
-        <ul class="app-menuinner" [class.is-open]="innerOpen === 'file' ? true : false">
-          <li>Open</li>
-          <li>Close</li>
-          <li>Quit</li>
-        </ul>
-      </li>
-      <li [class.is-active]="innerOpen === 'edit' ? true : false">
-        <span (click)="openInner('edit')">Negotiations</span>
-        <ul class="app-menuinner" [class.is-open]="innerOpen === 'edit' ? true : false">
-          <li>Open</li>
-          <li>Close</li>
-          <li>Quit</li>
-        </ul>
-      </li>
-      <li [class.is-active]="innerOpen === 'view' ? true : false">
-        <span (click)="openInner('view')">Forecast</span>
-        <ul class="app-menuinner" [class.is-open]="innerOpen === 'view' ? true : false">
-          <li>Open</li>
-          <li>Close</li>
-          <li>Quit</li>
-        </ul>
-      </li>
-      <li [class.is-active]="innerOpen === 'clustering' ? true : false">
-        <span (click)="openInner('clustering')">Clustering</span>
-        <ul class="app-menuinner" [class.is-open]="innerOpen === 'clustering' ? true : false">
-          <li>Open</li>
-          <li>Close</li>
-          <li>Quit</li>
-        </ul>
-      </li>
-    </ul>
-  </div> -->
+
   <div class="app__base">
     <div class="app-base-routes">
       <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="app__footer">
+    <div class="app-footer-details">
+      Ready
+    </div>
+    <div class="app-footer-pagination">
+      <button class="spx-btn spx-btn--circle spx-btn--sd spx-btn--sm" data-icon="navigate_before"></button>
+      <button class="spx-btn spx-btn--circle spx-btn--sd spx-btn--sm" data-icon="navigate_next"></button>
     </div>
   </div>
 </div>

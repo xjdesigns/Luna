@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MainComponent } from './components/main/main.component';
 import { DocsComponent } from './docs/docs.component';
+import { HomeComponent } from './components/home/home.component';
 
 // DIRECTIVES
 import { CodeDisplayDirective } from './shared/code-display.directive';
@@ -33,6 +34,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import stateReducer from './redux/reducer';
 
+import { AgGridModule } from 'ag-grid-angular/main';
+
 
 @NgModule({
   imports:      [
@@ -42,7 +45,8 @@ import stateReducer from './redux/reducer';
     AppRoutingModule,
     ChartistModule,
     StoreModule.forRoot({ state: stateReducer }),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    AgGridModule.withComponents([])
   ],
   declarations: [
     AppComponent,
@@ -51,6 +55,7 @@ import stateReducer from './redux/reducer';
     CodeDisplayDirective,
     AlertComponent,
     DocsComponent,
+    HomeComponent,
     ...LunaProvider,
     ...Ng2Provider
   ],
