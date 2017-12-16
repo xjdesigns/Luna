@@ -19,7 +19,8 @@ interface AppState {
     store_name: string,
     city: string,
     store_hours: string,
-    promos: promotional
+    promos: promotional,
+    store: any
   }
 }
 
@@ -38,7 +39,7 @@ interface State {
 
 export class AppComponent {
   appMenuOpen: boolean = false;
-  data: State;
+  data: any;
   state: Observable<State>;
   storeData: Observable<promotional>;
   countdownData: string = '';
